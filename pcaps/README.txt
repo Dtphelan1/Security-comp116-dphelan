@@ -79,6 +79,7 @@ IMPORTANT NOTE: PLEASE DO NOT LOG ON TO THE WEBSITE OR SERVICE ASSOCIATED WITH T
 
 18. Provide a listing of all IP addresses with corresponding hosts (hostname + domain name) that are in this PCAP set. Describe your methodology.
     A: See included file ips.txt
+    As far as methodolgy goes, there's a panel in the tool bar of wireshark called "Statistics". Clicking on that gives one the option to "Show address resolution". Through this I was able to retrieve and edit slightly a list of the 800 some-odd IP Addresses as well as any potential domain names that could be resolved.
 
 
 General Questions: 
