@@ -1,6 +1,4 @@
-
-# README
-## Alarm.rb -- By Dylan Phelan -- On 10/13/2015
+# Alarm.rb -- By Dylan Phelan -- On 10/13/2015
 
 ### Implemented
 - The author believes that all aspects of the assignment have been properly addressed. 
