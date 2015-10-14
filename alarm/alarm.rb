@@ -60,7 +60,7 @@ end
 
 # Prints out the alarm according to pre-specified format
 def soundAlarm (incidentNum, descrip, packet)
-    print "#{incidientNum}. ALERT: #{descrip} is detected from #{packet.ip_saddr} (#{packet.proto.last}) (#{packet.payload})!\n"
+    puts "#{incidientNum}. ALERT: #{descrip} is detected from #{packet.ip_saddr} (#{packet.proto.last}) (#{packet.payload})!"
 end
 
 
@@ -107,7 +107,7 @@ end
 
 # Sounds the alarm in the case of log file
 def soundLogAlarm(incidentNum, descrip, srcAddr, protocol, payload)
-    print "#{incidentNum}. ALERT: #{descrip} is detected from #{srcAddr} (#{protocol}) (#{payload})!\n"
+    puts "#{incidentNum}. ALERT: #{descrip} is detected from #{srcAddr} (#{protocol}) (#{payload})!"
 end
   
 # Determines if line from log include phpmyAdmin 
@@ -156,7 +156,6 @@ def logCheck(l)
 	soundLogAlarm($incidentNum, "PHPMyAdmin FOUND", addr, protocol, payload)
     end 
     if (isShellcode(l))
-	puts l
 	$incidentNum += 1
 	soundLogAlarm($incidentNum, "SHELL CODE FOUND", addr, protocol, payload)
     end  
