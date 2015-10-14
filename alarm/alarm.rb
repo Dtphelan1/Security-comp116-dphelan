@@ -54,13 +54,13 @@ def containsCreditCard(payload)
     disc = payload.scan(/6011(\s|-)?\d{4}(\s|-)?\d{4}(\s|-)?\d{4}/i)
     mast = payload.scan(/5\d{3}(\s|-)?\d{4}(\s|-)?\d{4}(\s|-)?\d{4}/i)
     amer = payload.scan(/3\d{3}(\s|-)?\d{6}(\s|-)?\d{5}/i)
-    return ((ver.length+disc.length+mast.length+amer.length) > 0)
+    return ((visa.length + disc.length + mast.length + amer.length) > 0)
 end 
 
 
 # Prints out the alarm according to pre-specified format
 def soundAlarm (incidentNum, descrip, packet)
-    puts "#{incidientNum}. ALERT: #{descrip} is detected from #{packet.ip_saddr} (#{packet.proto.last}) (#{packet.payload})!"
+    puts "#{incidentNum}. ALERT: #{descrip} is detected from #{packet.ip_saddr} (#{packet.proto.last}) (#{packet.payload})!"
 end
 
 
@@ -78,7 +78,7 @@ def trafficCheck(packet)
 	$incidentNum += 1
 	soundAlarm($incidentNum, "XMAS SCAN", packet);
     end 
-    if (isNikto(packet.tcp_flags))
+    if (isNikto(packet.payload))
 	$incidentNum += 1
 	soundAlarm($incidentNum, "NIKTO SCAN", packet);
     end 
